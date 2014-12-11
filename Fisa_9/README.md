@@ -1,0 +1,1 @@
+F.9.1 Descompunerea unui numar naturtal in factori primi

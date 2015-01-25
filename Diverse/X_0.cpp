@@ -15,13 +15,19 @@ int main(){
 		}
 	}
 
-	char ch;
+	int cell;
+	int player = 1;
 	do {
 		system("cls");
-		cin >> ch;
+		cin >> cell;
 
-		cout << ch;
-	} while (ch != '0');
+		if (cell == 1'){
+			if (cell[0][0] !=0 ) continue;
+			d[0,0] = player;
+		}
+		else if (cell=='2')
+		cout << cell;
+	} while (cell != '0');
 	
 
 	return 0;

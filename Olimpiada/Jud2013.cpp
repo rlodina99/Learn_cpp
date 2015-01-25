@@ -7,56 +7,77 @@ using namespace std;
 int main(){
 	ifstream f("Jud2013.in");
 	int n;		//nr de cladiri
-	f>> n;
+	f >> n;
 
-	int cladiri[n, 10];	//pt. fiecare cladire pasteeaza nr de turnuri
+	int a[n];
 
-	//cladiri[2,i] - inaltimea turnului i de la cladireea a 2-a
-	//cladiri[i, 9] - nr de turnuri al cladiri i (nr. de cifre)
-
-	for(int i=0; i<n; i++){
-		int x;
-		f >> x;
-
-		int nrCifre =0;
-		int x2 = x;
-		while ( x2!=0) {
-			x2 = x2/10;
-			nrCifre++;
-		}
-
-		cladiri[i, 9]  = nrCifre;
-		for (int j =0; j< nrCifre; j++){
-			//da-mi cifra de pe pozirtia j
-			cladiri[i, j]  = ( x / pow(nrCifre-1,10) ) % 10;
+	for(int i=0;i<n;i++){
+		f >> a[i];
+		cout << a[i] << ' ';
+	}
+	int aux,max=0;
+	for(int i=0;i<n;i++){
+		aux=a[i];
+		while(aux!=0){
+			if(aux%10>max)
+				max=aux%10;
+			aux=aux/10;
 		}
 	}
 
-	// determinare cel mai inalt turn (cea mai mare cifra) 
-	int maxTurn = 0;
-	for(int i=0; i< n; i++){
-		for(int j=; j<cladiri[i,9]; j++)
-		  if (maxTurn < cladiri[i,j]) maxTurn = cladiri[i,j];
-
-	}
-
-	//cate cladiri au in componenta cun turn egal cu maxTurn ?
-	int nrCladiriCuMaxTurn =0;
-	for(int i=0; i< n; i++){
-		for(int j=; j<cladiri[i,9]; j++){
-			if (cladiri[i,j]) == maxTurn){
-				nrCladiriCuMaxTurn ++;
+	cout << endl << max << ' ';
+	int nr=0;
+	for(int i=0;i<n;i++){
+		aux=a[i];
+		while(aux!=0){
+			if(aux%10==max){
+				nr++;
 				break;
 			}
+			aux=aux/10;
+		}
+	}
+	cout << nr << endl;
+	int NrInvers=0,Oglinzi=0;
+	for(int i=0;i<n;i++){
+		aux=a[i];
+		NrInvers=0;
+		while(aux!=0){
+			NrInvers=NrInvers*10+aux%10;		
+			aux=aux/10;
+		}
+		cout << NrInvers << ' ';
+		if(NrInvers==a[i])
+			Oglinzi++;
+	}
+	cout << endl << Oglinzi << endl << endl;
+
+	int cuburi=0;
+	int cifre=0;
+	for(int i=0;i<n;i++){
+		cifre=0;
+		NrInvers=0;
+		aux=a[i];
+		while(aux!=0){
+			cifre++;
+			NrInvers=NrInvers*10+aux%10;
+			aux=aux/10;
+		}
+		int b[cifre];
+		for(int i=0; i<cifre; i++){
+			b[i]=NrInvers%10;
+			NrInvers=NrInvers/10;
+		}
+		
+		for(int i=0;i<cifre/2;i++){
+			cout << b[i] << ' ' << b[cifre-i-1] << endl << endl;
+			if(b[i] > b[cifre-i-1])
+				cuburi+=b[i] - b[cifre-i-1];
+			else
+				cuburi+=b[cifre-i-1] - b[i];
+
 		}
 	}
 
-	for(int i=0; i< n; i++){
-		for(int j=0; j<cladiri[i,9]/2; j++){
-			if (cladiri[i,j] == cladiri[i, cladiri[i,9] - j])
-		}
-	}
-
-
-
+	cout << cuburi;
 }

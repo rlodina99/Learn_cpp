@@ -34,7 +34,7 @@ int main(){
 
 	int nrReportat;		//nr de tinut minte daca x+y > 10
 
-	for(int i=max_cifre; i>=0; i--){
+	for(int i=0; i< max_cifre; i++){
 		s = 0;
 		nrReportat =0;
 		if (i < a_cifre) s += a[i];

@@ -26,7 +26,7 @@ int main(){
 			}
 		}
 		else {
-			cuvant +=c;
+			cuvant +=c;				//concatenare caracter citit 
 			suntInCitireaUnuiCuvant  = 1;
 		}
 		nrChar ++;

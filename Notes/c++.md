@@ -28,8 +28,10 @@ f.close();					//inchisde fisierul f
 
 f.eof();  					//returneza true daca am ajuns la finalul fisierului f
 
+int f.peek();				//Returns the next character in the input sequence, without extracting it: 
+
 char c;
-while (f.get(c)){				//citeste un caracter din f (in c) si returneaza 0 - EOF daca s-a ajuns la final de fisier
+while (f.get(c)){			//citeste un caracter din f (in c) si returneaza 0 - EOF daca s-a ajuns la final de fisier
 	cout << c;
 }
 
@@ -39,6 +41,10 @@ while (!f.eof()){
 	f >> c;
 	cout << c;
 }
+
+string linie;
+getLine(f, linie);			//citeste o linie din f in var. string linie
+
 # #include <cctype>
 
 ## int isdigit ( int c );
@@ -47,5 +53,24 @@ Check if character is decimal digit
 Check if character is alphabetic
 ## int isblank ( int c );
 Check if character is blank
-## int isspace ( int c );
+## int isspace ( int c ); 
 Check if character is a white-space (spatiu, tab, LF, enter)
+
+#std::string   
+string s = "Amadeus merge la piata";
+cout << s.length();		//returneaza nr. de caractere din s
+cout << s[i];			//returneaza caracterul cu indexul i
+if (s.empty()) 			//returneaza true daca s este gol
+
+#find
+int idx = s.find("merge"); 		//cauta sirul de caractere merge in s si returneaza poz de start
+int idx = s.find("merge", 3)	//cauta sirul de caractere merge in s INCEPAND CU POZ 3 si returneaza poz de start
+//returneaza constanta std::string::npos daca nu exista
+if (idx == string::npos) cout << ""
+
+
+convert string to int
+'''
+	string s = "1245";
+	int x = atoi(s.c_str());	//definita in <stdlib.h
+'''	

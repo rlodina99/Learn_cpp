@@ -22,6 +22,9 @@ f.open("date.in");			//deschide fisierul date.in
 int x;
 f >> x;						//citeste in variabila x un nr. intreg din fisier
 
+string nume;
+f >> nume;					//citeste toate carcterelle de la poz curenta pana la primul spatiu
+
 char c;
 f >> c;						//de la pozitia ramasa (in fisier) citeste un caracter
 f.close();					//inchisde fisierul f
@@ -44,6 +47,7 @@ while (!f.eof()){
 
 string linie;
 getLine(f, linie);			//citeste o linie din f in var. string linie
+
 
 # #include <cctype>
 
@@ -70,7 +74,34 @@ if (idx == string::npos) cout << ""
 
 
 convert string to int
-'''
-	string s = "1245";
-	int x = atoi(s.c_str());	//definita in <stdlib.h
-'''	
+
+string s = "1245";
+int x = atoi(s.c_str());	//definita in <stdlib.h>
+
+
+#Struct
+
+Definire tip de data utilizator
+
+
+struct Persoana			//definim tipul strct cu numele persoana
+{
+	string nume;
+	int anulNasterii; 
+}
+
+Persoana elev;				//creem variabila elev de tip Persoana
+elev.nume = "Pop Ionel";	//atribuire valoare la campul nume de la variabila el;ev
+evel.anulNasterii = 1999;
+cout << elev.nume << " " << elev.anulNasterii;
+
+Persoana arr[10];			// vector de 10 elemente fiecare element este de tip Persoana
+
+arr[0].Nume = "Ionica";
+arr[0].anulNasterii = 1999;
+arr[0].anulNasterii ++;
+cout 
+	<< arr[0].Nume			// numele primei persoane
+	<< arr[0].anulNasterii; //
+
+

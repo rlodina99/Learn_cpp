@@ -73,7 +73,7 @@ int main(){
 					dreptunghic=1;
 				if(l2>l1 && l2>l3 && l2 == sqrt(l1*l1+l3*l3))
 					dreptunghic=1;
-				if(l3>l2 && l3>l1 && l3 * l3 ==  (l2*l2+l1*l1))
+				if(l3>l2 && l3>l1 && l3 * l3 ==  (l2*l2 + l1*l1) )
 					dreptunghic=1;
 
 				if(isoscel==1 && dreptunghic==1)

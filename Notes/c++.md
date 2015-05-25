@@ -46,7 +46,7 @@ while (!f.eof()){
 }
 
 string linie;
-getLine(f, linie);			//citeste o linie din f in var. string linie
+getline(f, linie);			//citeste o linie din f in var. string linie
 
 
 # #include <cctype>

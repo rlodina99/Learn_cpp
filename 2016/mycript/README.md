@@ -1,9 +1,17 @@
 #Simple file & directory encription app
 
-    mycript [-e]|-d [-v|--verision] [-f]  -p password input_file [output_file]
+    mycript [-e]|-d|[-v|--version]|[-h|--help]  [-f]  -p password input_file [output_file]
 
+    mycript cmd  [-f]  -p password input_file [output_file]
+
+    
+cmd:
 - e = encrypt
 - d = decript
+- v = afisare versiune
+- h = help
+params:
+- p password
 - f - force overwrite output_file
 - output_file - optional, daca lipseste output_file = input_file.cry
     

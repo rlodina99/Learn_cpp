@@ -6,14 +6,14 @@
  */
 
 
-#define NR_RECORDS 100
+#define NR_RECORDS 10
 
 
 
 #include <iostream>
 #include <fstream>
-
-#include <stdlib.h>     /* srand, rand */
+#include <cstring>
+#include <cstdlib>    /* srand, rand */
 #include <time.h>       /* time */
 
 using namespace std;

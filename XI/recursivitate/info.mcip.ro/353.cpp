@@ -1,0 +1,2 @@
+#353. [2012-02-14 - 09:31:08]
+Se citeste un vector a cu n elemente numere intregi. Construiti un vector b care sa contina elementele distincte din vectorul a. Toate prelucrarile vor fi realizate folosind functii recursive.
